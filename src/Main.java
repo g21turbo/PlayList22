@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Create an album
         Album album = new Album("AC/DC", "Back in Black");
         album.addSong("Hell's Bells", 5.10);
         album.addSong("Shoot To Thrill", 5.17);
@@ -19,6 +20,8 @@ public class Main {
         album.addSong("Rock And Roll Ain't Noise Pollution", 4.12);
         albums.add(album);
 
+
+        //Create an album
         album = new Album("Zac Brown Band", "Home Grown");
         album.addSong("Every Little Bit", 4.03);
         album.addSong("Whatever It Is", 3.09);
@@ -33,6 +36,8 @@ public class Main {
         album.addSong("Tax Man Shoes", 2.58);
         albums.add(album);
 
+
+        //Create a playlist
         LinkedList<Song> playList = new LinkedList<>();
         albums.get(0).addToPlayList("Shoot To Thrill", playList);
         albums.get(0).addToPlayList("Back In Black", playList);
@@ -43,12 +48,15 @@ public class Main {
         albums.get(1).addToPlayList(4, playList);
         albums.get(1).addToPlayList(2, playList);
 
+        //play the playlist
         play(playList);
 
 
     }
 
-
+    //Play method plays songs
+    //Uses scanner to receive option choice
+    //List iterator used to move forward and backwards through list
     private static void play(LinkedList<Song> playList) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
@@ -136,6 +144,7 @@ public class Main {
         }
     }
 
+    //Prints list of available actions based on switch statement
     private static void printMenu(){
         System.out.println("Available actions:\npress");
         System.out.println("0 - to quit\n" +
@@ -146,6 +155,7 @@ public class Main {
                 "5 - print available actions");
     }
 
+    //Prints playlist
     private static void printList(LinkedList<Song> playList){
         Iterator<Song> iterator = playList.iterator();
         System.out.println("===============================");

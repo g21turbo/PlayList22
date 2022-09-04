@@ -1,16 +1,18 @@
 public class Song {
 
-
+    //Song variables
     private String title;
     private double duration;
 
 
-
+    //Constructor
     public Song(String title,double duration) {
         this.title = title;
         this.duration = duration;
     }
 
+
+    //Getters and Setters
     public String getTitle() {
         return title;
     }
@@ -27,6 +29,9 @@ public class Song {
         this.duration = duration;
     }
 
+
+
+    //Override toString method
     @Override
     public String toString() {
 
